@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="/assets/css/aca.css">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<script src="/assets/js/asa.js"></script>
+	<title>{{city.name}} : Our Air. Our Asia.</title>
+</head>
+<body id="city" class="cty">
+	<div id="header">
+		<h1><a href="/">Our Air. Our Asia.</a></h1>
+	</div>
+	<div id="links">
+		<ul>
+			<li>
+				<select class="cityDropdown">
+					<option>Cities</option>
+					{% for c in cities %}
+						<option value="{{c.key.name}}">{{c.name}}</option>
+					{% endfor %}
+				</select>
+			</li>
+			<li><a href="/">Home</a></li>
+			<li><a href="/faq">Q &amp; A</a></li>
+			<li><a href="mailto:ourair@ourasia.net">Contact</a></li>
+		</ul>
+	</div>
+	<div id="map" class="citymap city_{{city.key.name}}"></div>
+	<div id="content">
+		<h1>{{city.name}}</h1>
+		{% if city.current_aqi %}
+		<div class="aqi_table">
+			<div class="entry current">
+				<span class="label">Current AQI:</span>
+				<span class="value aqi">{{city.current_aqi}}</span>
+			</div>
+			<div class="averages">
+				<div class="label">Average AQI Over:</div>
+				<div class="entry last_week">
+					<span class="label">7 Days</span>
+					<span class="value aqi">{{city.last_week_avg_aqi}}</span>
+				</div>
+				<div class="entry last_month">
+					<span class="label">30 Days</span>
+					<span class="value aqi">{{city.last_month_avg_aqi}}</span>
+				</div>
+				<div class="entry all_time">
+					<span class="label">All Records</span>
+					<span class="value aqi">{{city.all_time_avg_aqi}}</span>
+				</div>
+			</div>
+		</div>
+		<div id="aqiChart" style="clear: both;"></div>
+		{% endif %}
+		{{ city_template }}
+		<div id='citydetails'>
+			 {% include city_page %}
+		</div>
+	</div>
+	<div id="footer">
+		<p>“Our Air, Our Asia” is a public service project created by members of
+			<a href="http://asiasociety.org">Asia Society’s</a>
+			<a href="http://asiasociety.org/policy-politics/asia-21/asia-21-young-leaders-initiative"
+			title="The Asia 21 Young Leaders Initiative | Asia Society">Asia 21 Young Leaders
+			Initiative</a></p>
+	</div>
+</body>
+</html>

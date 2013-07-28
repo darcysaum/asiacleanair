@@ -1,0 +1,16 @@
+cron:
+- description: update china's aqi data
+  url: /tasks/aqi/china
+  schedule: every 24 hours
+- description: update thailand's aqi data
+  url: /tasks/aqi/thailand
+  schedule: every 24 hours
+- description: update singapore's aqi data
+  url: /tasks/aqi/singapore
+  schedule: every 24 hours
+- description: update malaysia's aqi data
+  url: /tasks/aqi/malaysia
+  schedule: every 24 hours
+- description: update hong kong's aqi data
+  url: /tasks/aqi/hongkong
+  schedule: every 24 hours

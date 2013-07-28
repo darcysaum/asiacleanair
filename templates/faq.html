@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="/assets/css/aca.css">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<script src="/assets/js/asa.js"></script>
+	<title>Q &amp; A : Our Air. Our Asia.</title>
+</head>
+<body id="faq" class="content">
+	<div id="header">
+		<h1><a href="/">Our Air. Our Asia.</a></h1>
+	</div>
+	<div id="links">
+		<ul>
+			<ul>
+				<li>
+					<select class="cityDropdown">
+						<option>Cities</option>
+						{% for c in cities %}
+							<option value="{{c.key.name}}">{{c.name}}</option>
+						{% endfor %}
+					</select>
+				</li>
+				<li><a href="/">Home</a></li>
+				<li><a href="/faq">Q &amp; A</a></li>
+				<li><a href="mailto:ourair@ourasia.net">Contact</a></li>
+			</ul>
+		</ul>
+	</div>
+	<div id="content">
+		<h1>Q &amp; A</h1>
+
+		<h4>1. What is the Air Quality Index (AQI)?</h4>
+		<p>The Air Quality Index (AQI), also referred to as the Air Pollution Index (API), Pollutant Standard Index (PSI) or Air Quality Health Index (AQHI) in some countries, is a number used by government agencies to characterize the quality of the ambient air at a given location. The higher the AQI figure, the higher the severity of air pollution and the potential adverse health effects it may have on people. </p>
+
+		<h4>2. Do AQI/APIs provide an accurate picture of air pollution?</h4>
+		<p>While AQI is a good indicator of air quality—based on several air pollutants that have adverse effects on human health and the environment—many air contaminants are not included as part of the AQI calculation. Therefore, while AQI figures can help people better determine general air pollution levels in a particular location, they cannot provide a full picture of the air quality of an area.</p>
+
+		<p>Many countries use five pollutants—ozone, fine particulate matter, nitrogen dioxide, carbon monoxide and sulfur dioxide—to calculate AQI/API figures, but many countries use fewer pollutants to calculate their data as well.</p>
+
+		<h4>3. Do all countries calculate API/AQI in the same manner?</h4>
+		<p>There are slight differences in the way in which countries calculate AQI/API figures. </p>
+		<p>First, there are differences in the pollutants that countries use to determine their AQI figures. While many countries measure concentrations of five pollutants—fine particulate matter, sulfur dioxide, carbon monoxide, ozone and nitrogen dioxide—over a 24-hour period to calculate AQI, many countries use fewer than five pollutants to determine the overall AQI figure of their cities. With regards to fine particulate matter, while most countries use PM10 (particles less than 10 micrometers in diameter) as part of their AQI calculation, some countries are starting to use PM2.5 (particles less than 2.5 micrometers in diameter) in their calculation. </p>
+		<p>Moreover, there are also differences in the way the overall AQI/API score is determined—while in countries such as China, the final API figure is the highest of the 5 individual scores assigned to each pollutant, in other countries the figure is determined by combining the scores of different pollutants.</p>
+
+		<h4>4. What do the AQI/API figures (from 0-500) mean?</h4>
+		<p>The higher the AQI number—the highest number being 500—the higher the severity of air pollution. While there are slight differences from country to country, in this website, we have classified the pollution figures as follows, closely following the Hong Kong government’s health advice to the public:</p>
+		<p>
+		<table class="legend" cellpadding="0" cellspacing="0">
+			<thead>
+				<tr>
+					<th class="val">AQI</th>
+					<th class="level">Level</th>
+					<th class="advice">Advice to general public</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="val aqi low">0&nbsp;&ndash;&nbsp;25</td>
+					<td class="level">Low</td>
+					<td class="advice">No response action is required.</td>
+				</tr>
+				<tr>
+					<td class="val aqi moderate">26&nbsp;&ndash;&nbsp;50</td>
+					<td class="level">Medium</td>
+					<td class="advice">No response action is required.</td>
+				</tr>
+				<tr>
+					<td class="val aqi elevated">51&nbsp;&ndash;&nbsp;100</td>
+					<td class="level">High</td>
+					<td class="advice">No immediate response action is suggested.<br/>Long-term effects may, however, be observed if exposed at such level persistently for months or year</td>
+				</tr>
+				<tr>
+					<td class="val aqi unhealthy">101&nbsp;&ndash;&nbsp;200</td>
+					<td class="level">Very High</td>
+					<td class="advice">Persons with existing heart or respiratory illnesses are advised to reduce physical exertion and outdoor activities. They are also advised to seek advice from a medical doctor before participating in sport activities and take more breaks during the activities.</td>
+				</tr>
+				<tr>
+					<td class="val aqi dangerous">201&nbsp;&ndash;&nbsp;500</td>
+					<td class="level">Severe</td>
+					<td class="advice">The general public is advised to reduce physical exertion and outdoor activities. They are also advised to seek advice from a medical doctor before participating in sport activities and take more breaks during the activities.</td>
+				</tr>
+			</tbody>
+		</table>
+		</p>
+		
+		<h4>5. So where does your data come from?</h4>
+		<p>All of our figures are drawn from publicly available government websites—we believe that governments have the responsibility to monitor and publicly disclose environmental data to the public. </p>
+		<p>Unfortunately, during our research we found out that many countries did not publish AQI data. In some cases this reflects a genuine lack of data (i.e. governments not routinely monitoring air quality), but in other cases this reflects a lack of transparency in disclosing data that is already being collected on a regular basis. </p>
+		<p>Even within countries that do publish AQI figures on a regular basis, we found a wide range or variability of the accessibility of such data—some governments had their data prominently displayed in their websites; other countries required that we spent hours digging through numerous websites to finally find the data.</p>
+
+		<h4>6. Why does it say “no/limited data” in some cities?</h4>
+		<p>During our search for API/AQI data, we discovered that many countries and cities do not publish API/AQI data. In other cases, we found some data, but the data found was extremely limited or difficult to access for the public. In places that we found no or limited data, we simply wrote down “no/limited data”. </p>
+		<p>We hope that governments of these cities can soon start to routinely monitor and disclose AQI data to the public in an easily accessible manner.</p>
+
+		<h4>7. Why are you covering the cities that you are covering?</h4>
+		<p>Due to capacity limitations, we had to limit the scope of our website to only some of the largest cities in Asia. However, please do contact us at <a href="mailto:ourair@ourasia.net">ourair@ourasia.net</a> if you would like to add your city’s AQI figure to our website and already have information on where we could access this data.</p>
+	
+	</div>
+	<div id="footer">
+		<p>“Our Air, Our Asia” is a public service project created by members of
+			<a href="http://asiasociety.org">Asia Society’s</a>
+			<a href="http://asiasociety.org/policy-politics/asia-21/asia-21-young-leaders-initiative"
+			title="The Asia 21 Young Leaders Initiative | Asia Society">Asia 21 Young Leaders
+			Initiative</a></p>
+	</div>
+</body>
+</html>
